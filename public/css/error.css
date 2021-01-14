@@ -1,0 +1,37 @@
+#app {
+  text-align: center;
+}
+
+#app .app-shrug {
+	font-size: 5rem;
+	white-space: nowrap;
+	color: var(--grey);
+	margin: 0 0 2rem 0;
+}
+
+#app .app-error {
+	font-size: 1.25rem;
+	margin: 0;
+  color: var(--light-grey);
+}
+
+#app a {
+  margin: 0 1rem 0 0;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  height: 2.75rem;
+  width: 2.75rem;
+  border-radius: 50%;
+  transition: box-shadow 0.2s;
+}
+
+#app a:hover {
+  box-shadow: 0 0 0.5rem var(--dark-accent);
+}
+
+/*
+<a href="/">
+        <i class="fas fa-chevron-left"></i>
+      </a>
+*/

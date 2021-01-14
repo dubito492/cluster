@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include("./components/root/seo.html"); %>
+	<%- include("./components/root/globals.html"); %>
+	<link rel="stylesheet" href="/css/error.css" />
+</head>
+<body>
+	<div id="app" class="flex direction-column align-center justify-center">
+		<h1 class="app-shrug">¯\_(ツ)_/¯</h1>
+    <div class="app-error">
+      <a href="/" class="inline-flex align-center justify-center">
+        <i class="fas fa-chevron-left"></i>
+      </a>
+      <%- error %>
+    </div>
+	</div>
+</body>
+</html>

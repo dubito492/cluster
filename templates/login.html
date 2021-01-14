@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include("./components/root/seo.html"); %>
+	<%- include("./components/root/globals.html"); %>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+  <script src="/js/login/index.js" type="module"></script>
+	<link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+	<div id="app">
+	<!-- <%- include("./components/header.html"); %> -->
+    <main class="login-wrapper">
+      <div class="logo-wrapper">
+        <div class="logo"></div>
+      </div>
+      <form class="login-form flex direction-column">
+        <div id="input-fields" class="flex direction-column">
+          <input name="email" type="email" placeholder="email" />
+          <input name="password" type="password" placeholder="password" />
+					<input id="pass-confirm" class="hide" type="password" placeholder="confirm password" />
+          <button type="button">sign in</button>
+        </div>
+        <hr class="divider" />
+        <span>don't have an account? sign up.</span>
+      </form>
+    </main>
+	</div>
+</body>
+</html>
