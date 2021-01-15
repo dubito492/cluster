@@ -1,4 +1,4 @@
-const { session } = require("../database")
+const { user: User, session } = require("../database")
 
 module.exports = (app, config) => {
 	app.get("/login", (req, res) => {
@@ -34,13 +34,21 @@ module.exports = (app, config) => {
 					res.json({ success: "/h" })
 				}
 				catch(e) {
+          console.log(e)
 					res.json({ error: 'failed to create session' })
 				}
         break
       }
       case "sign-up": {
-        
-
+        const { email, username, password } = req.body
+        try {
+          const user = new User(email, username, password)
+          await user.create()
+          res.json({ success: "sign in with your new account" })
+        }
+        catch(e) {
+          res.json({ error: e.message.toLowerCase() })
+        }
         break
       }
       default:

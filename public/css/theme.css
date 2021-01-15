@@ -34,6 +34,7 @@
 }
 
 .alert {
+  opacity: 1;
   position: fixed;
   bottom: 1rem;
   left: 50%;
@@ -49,8 +50,7 @@
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
-  opacity: 1;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 input, 
@@ -65,4 +65,19 @@ button {
 
 button {
   cursor: pointer;
+}
+
+.alert-in {
+  animation: 0.2s alert-in linear forwards; 
+}
+
+@keyframes alert-in {
+  0% {
+    transform: translate(-50%, calc(100% + 1rem)) rotate3d(1, 0, 0, 70deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
 }

@@ -5,7 +5,7 @@ const path = require("path")
 const endpoints = require("./endpoints")
 const config = require("./config")
 
-const app = express()
+const app = express();
 
 app.engine("html", require("ejs").renderFile)
 app.set("views", path.join(__dirname, "templates"))

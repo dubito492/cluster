@@ -1,8 +1,8 @@
 const admin = require("firebase-admin")
 
 const createSession = (idToken) => {
-  const expiration = 60 * 60 * 24 * 5 * 1000
-  return admin.auth().createSessionCookie(idToken, expiration)
+  const expiresIn = 60 * 60 * 24 * 7 * 1000
+  return admin.auth().createSessionCookie(idToken, { expiresIn })
 }
 
 const verifySession = async (session) => {

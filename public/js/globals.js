@@ -1,15 +1,19 @@
 const createAlert = (message) => {
   const alertContainer = document.createElement("div");
   alertContainer.textContent = message;
-  alertContainer.className = "alert";
+  alertContainer.className = "alert alert-in";
 
   document.body.appendChild(alertContainer);
 
   const removeAlert = () => {
-    alertContainer.style.opacity = 0;
-		alertContainer.ontransitionend = () => {
-      alertContainer.remove();
-		}
+    alertContainer.classList.remove("alert-in");
+
+    setTimeout(() => {
+      alertContainer.style.animation = "0.2s alert-in linear reverse forwards"
+      alertContainer.onanimationend = () => {
+        alertContainer.remove();
+      }
+    })
   }
 
   setTimeout(removeAlert, 3000);
@@ -17,7 +21,7 @@ const createAlert = (message) => {
 
 const query = (url, body) => {
 	return fetch(url, {
-		method: "POST,
+		method: "POST",
 		headers: {
 			"Content-Type": "application/json"
 		},
@@ -26,4 +30,9 @@ const query = (url, body) => {
 		createAlert(`failed api: ${url}`);
 		return {};
 	});
+}
+
+const $ = (tag) => {
+  let nodes = document.querySelectorAll(tag)
+  return nodes.length > 1 ? [ ...nodes ] : nodes[0]
 }
