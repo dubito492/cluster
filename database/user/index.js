@@ -5,16 +5,9 @@ module.exports = (firestore) => {
   const users = firestore.collection("users")
 
   class User {
-    constructor(email, username, password) {
-      [ this.userDetails, this.adminParameters ] = defaultUser(email, username, password)
-    }
 
-    update() {
-
-    }
-
-    async create() {
-      const username = this.adminParameters.displayName
+    static async create(email, username, password) {
+      const [ userDetails, adminParameters ] = defaultUser(email, username, password)
       const taken = await User.query("username", username)
 
       if(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(username) || username.includes(' ')) {
@@ -27,11 +20,11 @@ module.exports = (firestore) => {
         throw new Error("that username has been taken")
       }
       
-      const user = await admin.auth().createUser(this.adminParameters).catch(e => {
+      const user = await admin.auth().createUser(adminParameters).catch(e => {
         throw new Error("that email has been taken")
       })
     
-      return users.doc(user.uid).set(this.userDetails, { merge: true })
+      return users.doc(user.uid).set(userDetails, { merge: true })
     }
     
     static query(mode, query) {
@@ -41,6 +34,7 @@ module.exports = (firestore) => {
         username: () => users.where('publicInfo.displayName', '==', query).get(),
         identifier: () => admin.auth().getUsers(query).then(res => res.users)
       }
+      
 
       if(modes.hasOwnProperty(mode)) {
         return modes[mode]()
@@ -50,4 +44,4 @@ module.exports = (firestore) => {
   }
 
   return User
-}
+} 

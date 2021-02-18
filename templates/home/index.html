@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include("../components/root/seo.html"); %>
+	<%- include("../components/root/globals.html"); %>
+	<link rel="stylesheet" href="/css/home/components/header.css" />
+	<link rel="stylesheet" href="/css/home/index.css" />
+  <script src="/js/home/index.js" type="module"></script>
+</head>
+<body>
+	<div id="app">
+    <%- include("../components/home/header.html"); %>
+    <div class="page-wrapper">
+      <div class="page-title">
+        <h1>Home</h1>
+      </div>
+      <div class="flex">
+        <img src="/images/default.png" alt="profile picture" />
+        <div>
+          <div id="input-post" class="textarea" contenteditable></div>
+          <!-- <textarea name="input-post" id="input-post" cols="30" rows="10" placeholder="What's happening?" ></textarea> -->
+          <div class="flex justify-between">
+            <div class="options">
+
+            </div>
+            <button class="post-button">Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+</body>
+</html>

@@ -3,20 +3,22 @@
 <head>
 	<%- include("./components/root/seo.html"); %>
 	<%- include("./components/root/globals.html"); %>
+	<link rel="stylesheet" href="/css/home/components/header.css" />
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
   <script src="/js/login/index.js" type="module"></script>
-	<link rel="stylesheet" href="/css/login.css" />
+	<link rel="stylesheet" href="/css/pages/login.css" />
 </head>
 <body>
 	<div id="app">
-	<!-- <%- include("./components/header.html"); %> -->
+	<%- include("./components/home/header.html"); %>
     <main class="login-wrapper">
       <div class="logo-wrapper">
-        <div class="logo"></div>
+        <div class="logo"><img src="/images/logo.png"></div>
       </div>
+      <p>join cluster today.</p>
       <form class="login-form flex direction-column">
         <div id="input-fields" class="flex direction-column">
           <input name="email" type="email" placeholder="email" />

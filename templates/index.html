@@ -3,16 +3,46 @@
 <head>
 	<%- include("./components/root/seo.html"); %>
 	<%- include("./components/root/globals.html"); %>
+	<link rel="stylesheet" href="/css/home/components/header.css" />
+  <script src="/js/home/index.js" type="module"></script>
 	<script>
 		const MODE = "<%- mode %>"
 	</script>
-  <script src="/js/index.js" type="module"></script>
-	<link rel="stylesheet" href="/css/index.css" />
+	<link rel="stylesheet" href="/css/home/index.css" />
 </head>
 <body>
-	<%- include("./components/header.html"); %>
+	<%- include("./components/home/header.html"); %>
 	<div id="app">
-    <p>Hello Landing Page Goes Here</p>
+		<center>
+			<h1 class="intro fadeUp" id="fadeIntro1">a new way to create.</h1>
+			<h1 class="intro fadeUp" id="fadeIntro2">a new way to play.</h1>
+			<h1 class="intro fadeUp" id="fadeIntro3">welcome to cluster.</h1>
+		</center>
+
+		<section class="product">
+			<h2>🎮 find your favorite games</h2>
+			<div id="games-container">
+				[gotta put a game card in here]
+			</div>
+		</section>
+
+		<section class="product">
+			<h2>🎧 vibe to the max</h2>
+			<div id="music-container">
+				[gotta put a music card in here]
+			</div>
+		</section>
+
+		<section class="product">
+			<h2><a href='/forums' style="color: var(--accent); text-decoration: none;">📣 Have unforgettable conversations ></a><h2>
+		</section>
+    
 	</div>
+
+	<script defer>
+		document.getElementsByClassName("nav-profile")[0].onclick = () => {
+			window.location.href = '/login';
+		}
+	</script>
 </body>
 </html>

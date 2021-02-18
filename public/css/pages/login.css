@@ -1,16 +1,21 @@
 .login-wrapper {
   width: 20rem;
-  margin: 2rem auto;
+  padding: 1rem;
+  margin: 6rem auto 4rem auto;
 }
 
 .login-wrapper .logo-wrapper {
   height: 6rem;
   width: 6rem;
-  margin: 0 auto;
+}
+
+.login-wrapper > p {
+  margin: 2rem 0;
+  font-size: 1.25rem;
 }
 
 .login-wrapper .login-form {
-  margin: 3rem 0 0 0;
+  /* margin: 3rem 0 0 0; */
   width: 100%;
 }
 
@@ -21,10 +26,6 @@
   transition: border-color 0.2s, 
               box-shadow 0.2s, 
               color 0.2s ease;
-}
-
-.login-form input::placeholder {
-  color: var(--light-grey);
 }
 
 .login-form input:focus {

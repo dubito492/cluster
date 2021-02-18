@@ -1,0 +1,42 @@
+
+#intro {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#intro .card {
+	text-align: center;
+	font-size: 1.5rem;
+}
+#game-card {
+	background: linear-gradient(-45deg, rgb(78, 139, 237), var(--dark-accent));
+}
+#music-card {
+	background: linear-gradient(-45deg, rgb(78, 139, 237), rgb(104, 232, 136));
+}
+
+#intro .card i{
+	font-size: 10vh;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 5px solid var(--accent);
+	border-radius: 2rem;
+	margin: 2rem;
+}
+#intro .card:hover {
+	filter: none;
+	cursor: pointer;
+}
+
+#intro .card h2 {
+	font-size: 5vmin;
+}

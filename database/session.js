@@ -24,6 +24,7 @@ const sessionMiddleware = async (req, res, next) => {
   if(cookie) {
     try {
       res.locals.claims = await verifySession(cookie)
+      next()
     }
     catch(e) {
       res.redirect("/login")

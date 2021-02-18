@@ -1,5 +1,6 @@
 :root {
   --dark-accent: #cc527a;
+  --transparent-accent: #e8175d42;
   --accent: #e8175d;
   --light-grey: #a8a7a8;
   --grey: #474747;
@@ -28,13 +29,14 @@ html, body {
 #app {
 	min-height: 100vh;
 	width: 100%;
-	padding: 1rem;
 }
 
 .hide {
 	display: none;
 }
 
+/*
+TODO: move into its own file, it's conflicting with headers in /h
 nav {
 	padding: 1em;
 	display: flex;
@@ -59,7 +61,21 @@ nav .links .button {
 }
 nav .logo {
 	display: inline-block;
-	font-size: 2em;
+	width: 5em;
 	padding-left: 0.5em;
 	margin: 0;
+}
+*/
+.nav-apps {
+	background: white;
+}
+nav .logo {
+	display: inline-block;
+	width: 5em;
+	padding: 0.5em;
+	margin: 0;
+	background: none;
+}
+body {
+	background: #e0ece4;
 }

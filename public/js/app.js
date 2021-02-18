@@ -19,7 +19,7 @@ const registerWorker = () => {
 	}
 }
 
-blockSource()
+// blockSource()
 
 if(typeof MODE !== "undefined" && MODE == "PRODUCTION") {
 	forceSecure()

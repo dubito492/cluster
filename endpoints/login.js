@@ -42,8 +42,7 @@ module.exports = (app, config) => {
       case "sign-up": {
         const { email, username, password } = req.body
         try {
-          const user = new User(email, username, password)
-          await user.create()
+          await User.create(email, username, password)
           res.json({ success: "sign in with your new account" })
         }
         catch(e) {

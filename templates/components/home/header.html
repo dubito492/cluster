@@ -1,0 +1,12 @@
+<header class="home-header flex align-center justify-between">
+  <div class="logo-wrapper" onclick="window.location.href='/h';"><img src="/images/logo.png"></div>
+  <nav class="nav-wrapper flex align-center">
+    <div id="waffle" class="nav-tiles flex align-center justify-center">
+      <img src="/images/waffle.svg" alt="waffle.svg" />
+    </div>
+		<div class="profile-pic">
+    	<img class="nav-profile" src="/images/default.png" alt="profile picture" />
+			<p><%= (locals.name) ? locals.name : ""%></p>
+		</div>
+  </nav>
+</header>
