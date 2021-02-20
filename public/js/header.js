@@ -4,22 +4,17 @@ const header = $("header.home-header")
 let apps = [
   { 
     name: "Charge",
-		src: "h/charge"
+		src: "h/charge",
+		img: "https://lh3.googleusercontent.com/proxy/zQ651PoY8KJNPfuG2a9cxpvajMP23ulaF2IFroLPK2ylwPviO46WnWZZol-eTC0Tdw1Pm7cFBr8ZPt4IxQH8NNP9PA"
   },
   { 
-    name: "Coda",
-		src: "h/coda"
+    name: "Clef",
+		src: "h/clef"
   },
 	{ 
     name: "CutScene",
 		src: "h/cutscene"
   }
-  // { 
-  //   name: "Profile"
-  // },
-  // { 
-  //   name: "Profile"
-  // }
 ]
 let navApps
 

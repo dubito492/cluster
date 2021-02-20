@@ -4,7 +4,7 @@
     <div id="waffle" class="nav-tiles flex align-center justify-center">
       <img src="/images/waffle.svg" alt="waffle.svg" />
     </div>
-		<div class="profile-pic">
+		<div class="profile-pic" onclick='<%= (locals.name) ? `window.location.href="/@${locals.name}"` : `window.location.href="/login"` %>'>
     	<img class="nav-profile" src="/images/default.png" alt="profile picture" />
 			<p><%= (locals.name) ? locals.name : ""%></p>
 		</div>
